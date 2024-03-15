@@ -435,6 +435,33 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_default() {
+        let tileset = Tileset::default();
+        assert_eq!(tileset.asset.version, "1.1".to_string());
+    }
+
+    #[test]
+    fn test_bounding_volumes() {
+        // box
+        let bv = BoundingVolume::new_box([0., 0., 0., 1., 1., 1., 2., 2., 2., 3., 3., 3.]);
+        assert!(bv.box_.is_some());
+        assert!(bv.sphere.is_none());
+        assert!(bv.region.is_none());
+
+        // sphere
+        let bv = BoundingVolume::new_sphere([0., 0., 0., 0.]);
+        assert!(bv.box_.is_none());
+        assert!(bv.sphere.is_some());
+        assert!(bv.region.is_none());
+
+        // region
+        let bv = BoundingVolume::new_region([0., 0., 1., 1., 2., 2.]);
+        assert!(bv.box_.is_none());
+        assert!(bv.sphere.is_none());
+        assert!(bv.region.is_some());
+    }
+
+    #[test]
     fn test_tile() {
         let tile = Tile::default();
         assert_eq!(
