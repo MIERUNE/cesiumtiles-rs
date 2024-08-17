@@ -1,6 +1,3 @@
-use std::io::BufReader;
-use std::io::Read;
-
 use serde::{Deserialize, Serialize};
 
 use cesiumtiles::gltf_extensions::gltf;

@@ -1,13 +1,13 @@
 [package]
-name = "cesiumtiles"
+authors = ["MIERUNE Inc. <info@mierune.co.jp>", "Re:Earth Flow Contributors"]
 edition = "2021"
-authors = ["MIERUNE Inc. <info@mierune.co.jp>"]
 license = "MIT"
+name = "cesiumtiles"
 
 [dependencies]
-serde = { version = "1.0.197", features = ["derive"] }
-serde_json = { version = "1.0.114", features = ["indexmap", "float_roundtrip"] }
-serde_repr = "0.1.18"
+serde = { version = "1.0.208", features = ["derive"] }
+serde_json = { version = "1.0.125", features = ["float_roundtrip", "indexmap"] }
+serde_repr = "0.1.19"
 
 [dev-dependencies]
 glob = "0.3.1"
