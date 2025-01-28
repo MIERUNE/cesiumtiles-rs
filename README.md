@@ -4,3 +4,7 @@
 [![codecov](https://codecov.io/gh/MIERUNE/cesiumtiles-rs/graph/badge.svg?token=cREJynPKKY)](https://codecov.io/gh/MIERUNE/cesiumtiles-rs)
 
 WIP
+
+## Author
+
+- Taku Fukada (@ciscorn)
