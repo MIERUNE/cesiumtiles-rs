@@ -357,7 +357,6 @@ pub struct Tileset {
 #[serde(deny_unknown_fields)]
 pub struct Statistics {
     /// A dictionary, where each key corresponds to a class ID in the `classes` dictionary of the metatata schema that was defined for the tileset that contains these statistics. Each value is an object containing statistics about entities that conform to the class.
-
     #[serde(skip_serializing_if = "Option::is_none")]
     pub classes: Option<HashMap<String, StatisticsClass>>,
 

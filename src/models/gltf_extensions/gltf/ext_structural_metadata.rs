@@ -2,6 +2,7 @@
 //!
 //! https://github.com/CesiumGS/glTF/tree/3d-tiles-next/extensions/2.0/Vendor/EXT_structural_metadata
 
+use indexmap::IndexMap;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::collections::HashMap;
@@ -81,8 +82,8 @@ pub struct Class {
     pub description: Option<String>,
 
     /// A dictionary, where each key is a property ID and each value is an object defining the property.
-    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
-    pub properties: HashMap<String, ClassProperty>,
+    #[serde(default, skip_serializing_if = "IndexMap::is_empty")]
+    pub properties: IndexMap<String, ClassProperty>,
 
     /// JSON object with extension-specific objects.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -288,8 +289,8 @@ pub struct PropertyTable {
     pub count: u32,
 
     /// A dictionary, where each key corresponds to a property ID and each value is an object describing where property values are stored.
-    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
-    pub properties: HashMap<String, PropertyTableProperty>,
+    #[serde(default, skip_serializing_if = "IndexMap::is_empty")]
+    pub properties: IndexMap<String, PropertyTableProperty>,
 
     /// JSON object with extension-specific objects.
     #[serde(skip_serializing_if = "Option::is_none")]

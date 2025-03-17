@@ -5,6 +5,7 @@ license = "MIT"
 name = "cesiumtiles"
 
 [dependencies]
+indexmap = { version = "2.8.0", features = ["rayon", "serde"] }
 serde = { version = "1.0.208", features = ["derive"] }
 serde_json = { version = "1.0.125", features = ["float_roundtrip", "indexmap"] }
 serde_repr = "0.1.19"
