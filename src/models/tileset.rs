@@ -245,6 +245,10 @@ pub struct Tile {
     /// Application-specific data.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub extra: Option<Value>,
+
+    /// Application-specific data.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub extras: Option<Value>,
 }
 
 impl Default for Tile {
@@ -264,6 +268,7 @@ impl Default for Tile {
             children: None,
             extensions: None,
             extra: None,
+            extras: None,
         }
     }
 }
