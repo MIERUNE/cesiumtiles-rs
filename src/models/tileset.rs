@@ -24,6 +24,10 @@ pub struct Asset {
     /// Application-specific data.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub extra: Option<Value>,
+
+    /// Application-specific data.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub extras: Option<Value>,
 }
 
 impl Default for Asset {
@@ -33,6 +37,7 @@ impl Default for Asset {
             tileset_version: None,
             extensions: None,
             extra: None,
+            extras: None,
         }
     }
 }
@@ -189,7 +194,7 @@ pub struct Content {
     pub extra: Option<Value>,
 }
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone, Copy)]
 #[serde(rename_all = "UPPERCASE")]
 pub enum Refine {
     Add,
@@ -245,6 +250,10 @@ pub struct Tile {
     /// Application-specific data.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub extra: Option<Value>,
+
+    /// Application-specific data.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub extras: Option<Value>,
 }
 
 impl Default for Tile {
@@ -264,6 +273,7 @@ impl Default for Tile {
             children: None,
             extensions: None,
             extra: None,
+            extras: None,
         }
     }
 }
