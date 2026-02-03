@@ -9,7 +9,7 @@ use serde_json::Value;
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(default, rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
-struct Style {
+pub struct Style {
     /// A dictionary object of `expression` strings mapped to a variable name key that may be referenced throughout the style. If an expression references a defined variable, it is replaced with the evaluated result of the corresponding expression.
     #[serde(skip_serializing_if = "Option::is_none")]
     pub defines: Option<HashMap<String, Expression>>, // default: None
@@ -64,7 +64,7 @@ type ColorExpression = String;
 type NumberExpression = Value; // float | str
 
 /// A series of property names and the `expression` to evaluate for the value of that property."""
-type Meta = HashMap<String, Expression>;
+pub type Meta = HashMap<String, Expression>;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(untagged)]

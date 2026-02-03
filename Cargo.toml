@@ -1,8 +1,12 @@
 [package]
 authors = ["MIERUNE Inc. <info@mierune.co.jp>", "Re:Earth Flow Contributors"]
-edition = "2021"
+edition = "2024"
 license = "MIT"
 name = "cesiumtiles"
+description = "3D Tiles 1.1 - JSON model"
+publish = true
+version = "0.0.1"
+repository = "https://github.com/MIERUNE/cesiumtiles-rs"
 
 [dependencies]
 indexmap = { version = "2.8.0", features = ["rayon", "serde"] }
