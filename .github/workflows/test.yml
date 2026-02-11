@@ -18,7 +18,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Rustup
         run: rustup toolchain install stable --profile minimal
       - name: Rust Cache
@@ -28,7 +28,7 @@ jobs:
       - name: Test
         run: cargo llvm-cov --workspace --exclude app --lcov --output-path lcov.info --all-features
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: lcov.info
